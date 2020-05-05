@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/mcode/cds-builder-tools/issues"
   },
-  "homepage": "https://github.com/mcode/cds-builder-tools#readme"
+  "homepage": "https://github.com/mcode/cds-builder-tools#readme",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-fontawesome": "^1.7.1",
+    "reactstrap": "^8.4.1"
+  }
 }
