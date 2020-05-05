@@ -1,0 +1,19 @@
+{
+  "name": "cds-builder-tools",
+  "version": "0.0.1",
+  "description": "Tools for building clinical decision support apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcode/cds-builder-tools.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mcode/cds-builder-tools/issues"
+  },
+  "homepage": "https://github.com/mcode/cds-builder-tools#readme"
+}
