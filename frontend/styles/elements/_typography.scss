@@ -1,0 +1,19 @@
+:root {
+  font-size: 12px;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: $font-weight-regular;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 600px) {
+  :root { font-size: 14px; }
+}
+
+@media (min-width: 1440px) {
+  :root { font-size: 20px; }
+}

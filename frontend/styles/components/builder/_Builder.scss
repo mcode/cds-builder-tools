@@ -1,0 +1,116 @@
+.builder {
+  &-wrapper { @include componentWidth; }
+
+  padding: $global-padding;
+  padding-bottom: 0;
+  background-color: $blue-darkest;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+
+    button {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+
+  &__heading {
+    color: $white;
+    flex: 1;
+    margin: 0;
+    padding-right: 1em;
+    font-weight: $font-weight-regular;
+  }
+
+  &__canvas {
+    margin: 0 -9999rem;
+    padding: 0 9999rem;
+    background: $white;
+    min-height: 500px;
+  }
+
+  &__buttonbar {
+    &-menu {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 5px;
+    }
+
+    [role=status] {
+      height: 30px;
+      color: $white;
+      font-style: italic;
+      text-align: right;
+    }
+
+    .icon {
+      padding-right: 10px;
+    }
+  }
+
+  .react-tabs {
+    [role=tablist] {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -9999rem;
+      padding: 0 9999rem;
+      background: $blue-darkest;
+      font-weight: $font-weight-regular;
+    }
+
+    [role=tab] {
+      flex-grow: 1;
+      white-space: nowrap;
+      list-style: none;
+      padding: 0.65em;
+      margin: 0 0.25em;
+      text-align: center;
+      cursor: pointer;
+      border-radius: $border-radius $border-radius 0 0;
+      font-size: 0.9em;
+
+      &[aria-selected=true] {
+        background-color: $white;
+      }
+
+      &[aria-selected=false] {
+        background-color: $blue;
+        color: $white;
+
+        &:focus,
+        &:hover {
+          background-color: $gray-dark;
+        }
+      }
+    }
+
+    .tab-panel-container {
+      padding: 2em 0;
+      background-color: $white;
+    }
+  }
+
+  .Select-input input {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .workspace-blurb {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+}
+
+.light-tooltip > .tooltip-inner {
+  background: $white;
+  color: $black;
+}
+
+.light-tooltip > .arrow::before {
+  border-left-color: $white;
+}

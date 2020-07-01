@@ -1,0 +1,187 @@
+// default styling for all elements
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $body-bg;
+  overflow-x: hidden;
+  color: darken($gray, 10%);
+}
+
+main {
+  > div:not([class]) {
+    padding: 1em;
+  }
+
+  > div:not([class]),
+  header + section {
+    background-color: $white;
+  }
+}
+
+label { margin-bottom: 0; }
+
+.button-style,
+#{$all-buttons},
+#{$all-text-inputs} {
+  font-size: 1rem;
+  padding: 0 0.75em;
+  border-radius: $border-radius;
+  height: 50px;
+
+  @media (min-width: 600px) and (max-width: 1439px) { height: 36px; }
+
+  @media (max-width: 599px) { height: 36px; }
+}
+
+.button-style,
+#{$all-buttons} {
+  @include button($default-button-text-color, $default-button-bg-color);
+
+  & + #{$all-buttons} {
+    // add margin between two buttons that are side by side!
+    margin-left: 0.25em;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#{$all-buttons-hover} {
+  cursor: pointer;
+}
+
+#{$all-text-inputs} {
+  border: $border-global;
+  box-shadow: $box-shadow-inset;
+}
+
+table {
+  border-collapse: collapse;
+
+  thead tr:last-child th,
+  thead tr:last-child td {
+    border-bottom: 3px $gray solid;
+  }
+
+  thead th,
+  thead td {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    text-align: left;
+  }
+
+  tbody th,
+  tbody td {
+    text-align: left;
+    border-bottom: 1px $white solid;
+  }
+
+  th:not(:last-child),
+  td:not(:last-child) {
+    padding-right: 2em;
+  }
+}
+
+a.light-link, {
+  color: $light-blue-link;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $light-blue-link;
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $blue-link;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($blue-link, 15%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-regular;
+  padding: 5px 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+.warning {
+  display: inline-block;
+  color: $red;
+  font-size: 0.8em;
+  background-color: lighten($red, 58%);
+  padding: 10px;
+  margin: 10px;
+
+  span.fa {
+    margin-right: 5px;
+  }
+}
+
+.notification {
+  color: $blue;
+  font-size: 0.8em;
+  background-color: lighten($blue-light, 35%);
+  padding: 10px;
+  margin: 10px;
+
+  span.fa {
+    margin-right: 5px;
+  }
+}
+
+.error-message {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  background: $body-bg;
+  color: $red;
+}
+
+.Select .Select-placeholder {
+  color: lighten($gray, 15%) !important;
+}
+
+.bold { font-weight: bold; }
+
+.align-right { text-align: right; }
+
+.form-control::placeholder {
+  color: $gray-contrast;
+  opacity: 1;
+}

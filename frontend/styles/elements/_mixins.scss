@@ -1,0 +1,108 @@
+@mixin ie10plus {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content
+  }
+}
+
+@mixin fullBleed($background) {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: $background;
+}
+
+@mixin componentWidth {
+  margin: 0 auto;
+
+  @include respond-to('desktop-wide') { width: 1170px; } // 1200px and over
+  @include respond-to('desktop') { width: 970px; }       // 992px to 1199px
+  @include respond-to('tablet') { width: 750px; }        // 768px to 991px
+  @include respond-to('mobile') { width: 100%; }         // 767px and under
+}
+
+@mixin button(
+  $color-text: $default-button-text-color,
+  $color-background: $default-button-bg-color,
+  $color-border: $default-button-border-color,
+  $color-border-hover: $default-button-border-hover-color,
+  $box-shadow: $box-shadow) {
+  background-color: $color-background;
+  color: $color-text;
+  border: $border-width solid $color-border;
+  box-shadow: $box-shadow;
+  transition: 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-text;
+    color: $color-background;
+    border-color: $color-border-hover;
+    box-shadow: $box-shadow;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+// make a table collapse to a list below a specified width
+// assumes cells have a data-th attribute present.
+@mixin responsive-table($breakpoint: 480px) {
+  thead {
+    @media (max-width: $breakpoint) {
+      display: none;
+    }
+  }
+
+  th,
+  td {
+    @media (max-width: $breakpoint) {
+      display: block;
+      padding: 0.25em 0.5em;
+      border-bottom: 0;
+    }
+
+    &::before {
+      @media (max-width: $breakpoint) {
+        content: attr(data-th);
+        display: block;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        font-size: 0.9em;
+      }
+    }
+
+    &:last-child {
+      @media (max-width: $breakpoint) {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+/* a fast way to inundate a selector and descendants
+   with a color! not intended for buttons.
+   this approach might change later */
+@mixin state-color($color) {
+  color: $color;
+  border-color: $color;
+
+  * {
+    color: $color;
+    border-color: $color;
+  }
+}
+
+@mixin native-focus() {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: Highlight;
+
+  /* WebKit gets its native focus styles.
+   */
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    outline-width: 5px;
+    outline-style: auto;
+    outline-color: -webkit-focus-ring-color;
+  }
+}

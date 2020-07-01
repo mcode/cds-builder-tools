@@ -1,0 +1,13 @@
+// ------------------------- LOGOUT ---------------------------------------- //
+.logout {
+  display: flex;
+  justify-content: flex-end;
+
+  .dropdown-button {
+    .dropdown-toggle {
+      color: $white;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}

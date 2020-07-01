@@ -1,0 +1,177 @@
+.element-select {
+  margin: 1em;
+
+  &__modal { padding-right: 10px; }
+
+  &__label {
+    min-width: 160px;
+
+    .fa {
+      padding-right: 10px;
+    }
+  }
+
+  &__element-field {
+    flex: 1;
+  }
+
+  &__external-cql-field {
+    margin-top: 10px;
+    min-width: stretch;
+  }
+
+  &__category-field {
+    flex: 0 0 10em;
+    margin-left: 0.5em;
+  }
+
+  &__option-category {
+    margin-left: 0.5em;
+    color: $gray;
+
+    &.is-disabled {
+      color: #ccc;
+    }
+  }
+
+  &__add-element {
+    display: flex;
+    align-items: center;
+    flex: 0 0 100%;
+  }
+}
+
+.element-modal {
+  .modal__header,
+  .modal__footer {
+    padding: 1em;
+  }
+
+  .modal__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    border-bottom: $border-global;
+    min-height: 250px;
+
+    .Select-menu-outer {
+      overflow-y: scroll;
+      max-height: 350px;
+    }
+  }
+
+  .modal__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .search__table {
+    @include responsive-table;
+
+    width: 100%;
+    margin: 1em 0;
+
+    th,
+    td {
+      padding: 0.5em;
+    }
+
+    .result-oid {
+      font-size: 0.8em;
+      color: darken($gray-light, 5%);
+    }
+
+    &.selectable {
+      tbody tr {
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $gray-blue;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    padding: 0 2em;
+  }
+
+  &__sidebar {
+    flex: 0 0 12em;
+    padding: 1em;
+    overflow-y: auto;
+
+    .transparent-button {
+      display: block;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 0.1em;
+      padding: 0.35em;
+      text-align: left;
+    }
+
+    .selected {
+      background-color: $gray-lighter;
+    }
+  }
+
+  &__list {
+    flex: 1;
+    padding: 1em;
+    overflow-y: auto;
+  }
+
+  &__search {
+    padding: 1em;
+    background-color: $gray-lightest;
+    border-bottom: $border-global;
+    display: flex;
+
+    .nav-icon {
+      margin: 10px 20px 0 0;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .element-select__option {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    padding: 0.35em;
+
+    .button-style {
+      display: inline-block;
+      padding: 0.2em;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+div.vsac-authenticate {
+  margin: 1em 0;
+
+  > span {
+    margin-left: 1em;
+  }
+}
+
+.disabled {
+  cursor:auto;
+  opacity: .45;
+}

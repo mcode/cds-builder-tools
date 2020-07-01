@@ -42,6 +42,8 @@ import { getOriginalBaseElement } from '../../utils/baseElements';
 import { getReturnType, validateModifier, allModifiersValid, getFieldWithType, getFieldWithId }
   from '../../utils/instances';
 
+import '../../../styles/App.scss'
+
 function getInstanceName(instance) {
   return (getFieldWithId(instance.fields, 'element_name') || {}).value;
 }

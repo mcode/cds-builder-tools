@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/mcode/cds-builder-tools#readme",
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
+    "node-bourbon": "^4.2.8",
     "prop-types": "^15.7.2",
     "rc-time-picker": "^3.7.3",
     "react": "^16.13.1",
@@ -29,7 +31,8 @@
     "react-fontawesome": "^1.7.1",
     "react-modal": "^3.11.2",
     "react-select": "^3.1.0",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "tocbot": "^4.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -39,6 +42,9 @@
     "@storybook/react": "^5.3.18",
     "@testing-library/react": "^10.0.4",
     "babel-loader": "^8.1.0",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "sass": "^1.26.9",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.43.0"
   }
 }
