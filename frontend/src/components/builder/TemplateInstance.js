@@ -1009,6 +1009,11 @@ render() {
 }
 
 TemplateInstance.propTypes = {
+  /**
+   * A list of all the instances in all the trees.
+   * This includes the current instance, all instances in the current tree, and all instances in other trees.
+   * The trees are represented through the various tabs in the UI, including Inclusions and Exclusions
+   */
   allInstancesInAllTrees: PropTypes.array.isRequired,
   baseElements: PropTypes.array.isRequired,
   codeData: PropTypes.object,
@@ -1025,6 +1030,9 @@ TemplateInstance.propTypes = {
   isValidCode: PropTypes.bool,
   loadValueSets: PropTypes.func.isRequired,
   loginVSACUser: PropTypes.func.isRequired,
+  /**
+   * The Instances in the same tree, including itself (i.e. Inclusion only, Exclusion only)
+   */
   otherInstances: PropTypes.array.isRequired,
   parameters: PropTypes.array,
   renderIndentButtons: PropTypes.func.isRequired,
@@ -1033,6 +1041,9 @@ TemplateInstance.propTypes = {
   searchVSACByKeyword: PropTypes.func.isRequired,
   setVSACAuthStatus: PropTypes.func.isRequired,
   subpopulationIndex: PropTypes.number,
+  /**
+   * The current TemplateInstance
+   */
   templateInstance: PropTypes.object.isRequired,
   treeName: PropTypes.string.isRequired,
   updateInstanceModifiers: PropTypes.func.isRequired,
