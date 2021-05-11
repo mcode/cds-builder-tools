@@ -18,7 +18,7 @@
   "homepage": "https://github.com/mcode/cds-builder-tools#readme",
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.25.3",
     "prop-types": "^15.7.2",
     "rc-time-picker": "^3.7.3",
